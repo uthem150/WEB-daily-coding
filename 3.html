@@ -21,7 +21,31 @@
   </head>
 
   <body>
-    <h1><a href="index.html">WEB</a></h1>
+    <h1><a href="index.html" id="title">WEB</a></h1>
+    <input
+      type="button"
+      value="Night"
+      onclick="
+      document.querySelector('body').style.backgroundColor='black';
+      document.querySelector('body').style.color='white';
+      var anchors = document.querySelectorAll('a');
+      for(var i = 0; i < anchors.length; i++) {
+          anchors[i].style.color='white';
+      }
+    "
+    />
+    <input
+      type="button"
+      value="Day"
+      onclick="
+      document.querySelector('body').style.backgroundColor='white';
+      document.querySelector('body').style.color='black';
+      var anchors = document.querySelectorAll('a');
+      for(var i = 0; i < anchors.length; i++) {
+          anchors[i].style.color='black';
+      }
+    "
+    />
     <div id="grid">
       <ol>
         <!-- ul은 i의 부모태그 -->
@@ -37,6 +61,7 @@
             href="https://ko.wikipedia.org/wiki/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8"
             target="_blank"
             title="위키피디아 JavaScript"
+            id="subject"
             ><strong>JavaScript</strong></a
           >는 객체 기반의 스크립트 프로그래밍 언어이다.
         </p>
