@@ -1,0 +1,20 @@
+<h1>Loop & Array</h1>
+<script>
+  var coworkers = ["egoing", "leezche", "duru", "taeho"];
+</script>
+<h2>Co workers</h2>
+<ul>
+  <script>
+    var i = 0;
+    while (i < coworkers.length) {
+      document.write(
+        '<li><a href="http://a.com/' + // href속성을 쪼개서 링크를 걸 수도 있음
+          coworkers[i] +
+          '">' +
+          coworkers[i] +
+          "</a></li>"
+      );
+      i = i + 1;
+    }
+  </script>
+</ul>
