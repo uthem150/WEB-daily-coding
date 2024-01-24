@@ -20,27 +20,29 @@
     <link rel="stylesheet" href="style.css" />
 
     <script>
+      function LinksSetColor(color) {
+        var alist = document.querySelectorAll("a"); // 모든 a태그를 배열로 저장
+        for (var i = 0; i < alist.length; i++) {
+          alist[i].style.color = color;
+        }
+      }
+      function BodySetColor(color) {
+        document.querySelector("body").style.color = color;
+      }
+      function BodySetBackgroundColor(color) {
+        document.querySelector("body").style.backgroundColor = color;
+      }
       function nightDayHandler(self) {
-        // 함수 선언
-        var target = document.querySelector("body");
         if (self.value === "Night") {
-          target.style.backgroundColor = "black";
-          target.style.color = "white";
-
-          var alist = document.querySelectorAll("a"); // 모든 a태그를 배열로 저장
-          for (var i = 0; i < alist.length; i++) {
-            alist[i].style.color = "white";
-          }
+          SetBackgroundColor("black");
+          BodySetColor("white");
           self.value = "Day";
+          LinksSetColor("white");
         } else {
-          target.style.backgroundColor = "white";
-          target.style.color = "black";
-
-          var alist = document.querySelectorAll("a");
-          for (var i = 0; i < alist.length; i++) {
-            alist[i].style.color = "black";
-          }
+          SetBackgroundColor("white");
+          BodySetColor("black");
           self.value = "Night";
+          LinksSetColor("black");
         }
       }
     </script>
