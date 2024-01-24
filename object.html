@@ -20,5 +20,26 @@
         "data scientist : " + coworkers["data scientist"] + "<br>"
       );
     </script>
+    <h2>객체 반복 가져오기</h2>
+    <script>
+      for (var key in coworkers) {
+        document.write(key + "<br>");
+      }
+      document.write("<br>"); //가져오는 순서는 랜덤
+      for (var key in coworkers) {
+        document.write(key + " : " + coworkers[key] + "<br>");
+      }
+    </script>
+    <h2>property & method</h2>
+    <script>
+      //객체에 메소드를 추가하는 방법 (showAll이라는 메소드 추가)
+      coworkers.showAll = function () {
+        // function showAll(){}과 같은 표현
+        for (var key in this) {
+          document.write(key + " : " + this[key] + "<br>");
+        }
+      };
+      coworkers.showAll();
+    </script>
   </body>
 </html>
