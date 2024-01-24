@@ -18,6 +18,32 @@
       gtag("config", "G-FBQK7ED45E");
     </script>
     <link rel="stylesheet" href="style.css" />
+
+    <script>
+      function nightDayHandler(self) {
+        // 함수 선언
+        var target = document.querySelector("body");
+        if (self.value === "Night") {
+          target.style.backgroundColor = "black";
+          target.style.color = "white";
+
+          var alist = document.querySelectorAll("a"); // 모든 a태그를 배열로 저장
+          for (var i = 0; i < alist.length; i++) {
+            alist[i].style.color = "white";
+          }
+          self.value = "Day";
+        } else {
+          target.style.backgroundColor = "white";
+          target.style.color = "black";
+
+          var alist = document.querySelectorAll("a");
+          for (var i = 0; i < alist.length; i++) {
+            alist[i].style.color = "black";
+          }
+          self.value = "Night";
+        }
+      }
+    </script>
   </head>
 
   <body>
@@ -26,24 +52,7 @@
       type="button"
       value="Night"
       onclick="
-      var target = document.querySelector('body');
-      if(this.value==='Night') {
-        target.style.backgroundColor='black';
-        target.style.color='white';
-        var anchors = document.querySelectorAll('a');
-        for(var i = 0; i < anchors.length; i++) {
-            anchors[i].style.color='white';
-        }
-        this.value = 'Day';
-      } else {
-        target.style.backgroundColor='white';
-        target.style.color='black';
-        var anchors = document.querySelectorAll('a');
-        for(var i = 0; i < anchors.length; i++) {
-          anchors[i].style.color='black';
-        }
-        this.value = 'Night';
-      } 
+      nightDayHandler(this); //해당 버튼에 대해 기능 적용
       "
     />
 
