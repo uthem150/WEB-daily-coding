@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <h1>Function</h1>
+    <h2>Basic</h2>
+    <ul>
+      <script>
+        //함수 생성 부분
+        function two() {
+          document.write("<li>2-1</li>");
+          document.write("<li>2-2</li>");
+        }
+
+        document.write("<li>1</li>");
+        two();
+        document.write("<li>3</li>");
+        two();
+      </script>
+    </ul>
+    <h2>Parameter & Argument</h2>
+    <script>
+      // 계산값을 직접 출력
+      function sum(parameter1, parameter2) {
+        document.write(parameter1 + parameter2 + "<br>");
+      }
+      sum(2, 3);
+      sum(1, 6);
+    </script>
+    <h2>Return</h2>
+    <script>
+      // 계산 값을 리턴
+      function sum2(parameter1, parameter2) {
+        return parameter1 + parameter2;
+      }
+      document.write(sum2(2, 3) + "<br>");
+      document.write(sum2(1, 6) + "<br>");
+      document.write("<div style='color:red;'>" + sum2(5, 10) + "</div> <br>");
+    </script>
+  </body>
+</html>
