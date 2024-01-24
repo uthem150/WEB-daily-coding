@@ -21,31 +21,32 @@
   </head>
 
   <body>
-    <h1><a href="index.html" id="title">WEB</a></h1>
+    <h1><a href="index.html">WEB</a></h1>
     <input
+      id="night_day"
       type="button"
       value="Night"
       onclick="
-      document.querySelector('body').style.backgroundColor='black';
-      document.querySelector('body').style.color='white';
-      var anchors = document.querySelectorAll('a');
-      for(var i = 0; i < anchors.length; i++) {
-          anchors[i].style.color='white';
-      }
-    "
-    />
-    <input
-      type="button"
-      value="Day"
-      onclick="
-      document.querySelector('body').style.backgroundColor='white';
-      document.querySelector('body').style.color='black';
-      var anchors = document.querySelectorAll('a');
-      for(var i = 0; i < anchors.length; i++) {
+      if(document.querySelector('#night_day').value==='Night') {
+        document.querySelector('body').style.backgroundColor='black';
+        document.querySelector('body').style.color='white';
+        var anchors = document.querySelectorAll('a');
+        for(var i = 0; i < anchors.length; i++) {
+            anchors[i].style.color='white';
+        }
+        document.querySelector('#night_day').value = 'Day';
+      } else {
+        document.querySelector('body').style.backgroundColor='white';
+        document.querySelector('body').style.color='black';
+        var anchors = document.querySelectorAll('a');
+        for(var i = 0; i < anchors.length; i++) {
           anchors[i].style.color='black';
-      }
-    "
+        }
+        document.querySelector('#night_day').value = 'Night';
+      } 
+      "
     />
+
     <div id="grid">
       <ol>
         <!-- ul은 i의 부모태그 -->
